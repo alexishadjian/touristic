@@ -7,8 +7,34 @@ Header
 
 header {
     width: 100%;
-    h1 {
-        padding: 40px 0 40px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    .site-header  {
+        padding: 20px 0;
+        nav {
+            .nav-btn {
+                display: flex;
+                justify-content: space-between;
+                flex-flow: column;
+                align-items: flex-end;
+                height: 30px;
+                width: 45px;
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: $black;
+                    transition: 0.2s;
+                    &:last-child {
+                        width: 70%;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -19,26 +45,32 @@ Page
 /*-----Slider-----*/
 
 #slider {
-    height: 90vh;
     position: relative;
     .image {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        position: relative;
         width: 100%;
-        height: 90vh;
+        height: 100vh;
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 0) 61%);
+        }
     }
     .slick-arrow {
         position: absolute;
         transform: translate(0, -50%);
         top: 50%;
         z-index: 1;
-    }
-    .slick-prev {
-        left: 20px;
-    }
-    .slick-next {
-        right: 20px;
+        &.slick-prev {
+            left: 20px;
+        }
+        &.slick-next {
+            right: 20px;
+        }
     }
 }
 
