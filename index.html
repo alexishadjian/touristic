@@ -6,23 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet">
     <link href="assets/slick/slick.css" rel="stylesheet">
+    <link href="assets/moby/moby.min.css" rel="stylesheet">
 
     <title>Guide</title>
 </head>
 <body>
+
+    <div id="popup">
+        <a href="#">Bouton</a>
+    </div>
 
     <header>
         <div class="site-header wrapper row">
             <div class="site-header__logo col1">
                 <a href="#"><img class="logo" src="assets/img/logo.jpg"/></a>
             </div>
-            <nav class="col1">
-                <div class="nav-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <nav id="main-nav">
+                <ul class="padding-0 margin-0">
+                    <li><a href="#">Place</a></li>
+                    <li><a href="#">Restaurant</a></li>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">Travel</a></li>
+                <ul>
             </nav>
+            <div id="nav-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -45,7 +56,8 @@
 
     <footer>
         <script src="assets/jQuery/jquery-3.6.1.min.js"></script>
-        <script src="assets/Slick/slick.min.js"></script>
+        <script src="assets/slick/slick.min.js"></script>
+        <script src="assets/moby/moby.min.js"></script>
         <script src="script.js"></script>
     </footer>
 

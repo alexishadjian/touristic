@@ -29,3 +29,19 @@ jQuery(document).ready(function($){
     }
     
 });
+
+
+var mobyMenu = new Moby({
+	breakpoint		 : 1024,
+	enableEscape	 : true,
+    menu             : $('#main-nav'),
+	menuClass		 : 'right-side',
+	mobyTrigger		 : $("#nav-btn"),
+    onClose          : false,
+    onOpen           : false,
+	overlay			 : true,
+	overlayClass 	 : 'dark',
+    subMenuOpenIcon  : '<span>&#x25BC;</span>',
+	subMenuCloseIcon : '<span>&#x25B2;</span>',
+    template         : '<div class="moby-wrap"><div class="moby-close"><span class="moby-close-icon"></span> Close Menu</div><div class="moby-menu"></div></div>'
+});
