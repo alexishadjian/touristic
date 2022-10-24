@@ -66,6 +66,14 @@ html {
     margin: 0;
 }
 
+.text-align_center {
+    text-align: center;
+}
+
+.active {
+    display: block !important;
+}
+
 /*--------------------------------------------------------------
 Colonne
 --------------------------------------------------------------*/
@@ -110,6 +118,8 @@ Colonne
 Modèles
 --------------------------------------------------------------*/
 
+/*-----Bouton-----*/
+
 .btn {
     background: none;
     border-radius: 30px;
@@ -124,22 +134,30 @@ Modèles
 .btn_primary {
     background-color: $black;
     color: $white;
+    &:hover {
+        box-shadow: $shadow;
+        transform: translate(0, -2px);
+    }
 }
 
-.btn_primary:hover {
-    box-shadow: $shadow;
-    transform: translate(0, -2px);
-}
+/*-----Pop up-----*/
 
 #popup {
-    background-color: #727272;
-    width: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    background-color: #000000ab;
+    inset: 0;
     z-index: 10;
-    padding: 40px;
-    border-radius: 30px;
     display: none;
+    &__inner {
+        background-color: $white;
+        position: absolute;
+        width: 80%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        border-radius: 30px;
+    }
 }
+
+/*-----Formulaire-----*/

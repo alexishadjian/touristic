@@ -1,5 +1,29 @@
 jQuery(document).ready(function($){
 
+    /*--------------------------------------------------------------
+    Pop up
+    --------------------------------------------------------------*/ 
+    
+    $("#popup").addClass("active");
+
+    // Hide pop up when click outside
+    $(document).mouseup(function (e) {
+        if ($(e.target).closest("#container").length === 0) {
+            $("#popup").removeClass("active");
+        }
+    });
+        
+    // Hide pop up when press escape
+    $(document).keydown(function (e) {
+        if (e.keyCode == 27) {
+            $("#popup").removeClass("active");
+        }
+    });
+
+    /*--------------------------------------------------------------
+    Slider
+    --------------------------------------------------------------*/ 
+
     if ($('#slider').length > 0) {
         $('#slider').slick({
             infinite: true,
@@ -30,7 +54,9 @@ jQuery(document).ready(function($){
     
 });
 
-//Menu mobile
+/*--------------------------------------------------------------
+Menu mobile
+--------------------------------------------------------------*/
 
 var mobyMenu = new Moby({
 	breakpoint		 : 1024,
@@ -48,7 +74,9 @@ var mobyMenu = new Moby({
 });
 
 
-//Map 
+/*--------------------------------------------------------------
+Map
+--------------------------------------------------------------*/ 
 
 var map = L.map('map').setView([48.517526305997144, 2.6245277693024156], 13);
 
@@ -61,3 +89,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([48.517526305997144, 2.6245277693024156]).addTo(map);
 
 marker.bindPopup("<b>MyDigitalSchool</b><br>École du digital.").openPopup();
+
+
+

@@ -270,6 +270,14 @@ html {
   margin: 0;
 }
 
+.text-align_center {
+  text-align: center;
+}
+
+.active {
+  display: block !important;
+}
+
 /*--------------------------------------------------------------
 Colonne
 --------------------------------------------------------------*/
@@ -311,6 +319,7 @@ Colonne
 /*--------------------------------------------------------------
 Modèles
 --------------------------------------------------------------*/
+/*-----Bouton-----*/
 .btn {
   background: none;
   border-radius: 30px;
@@ -326,25 +335,31 @@ Modèles
   background-color: #000000;
   color: #ffffff;
 }
-
 .btn_primary:hover {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
   transform: translate(0, -2px);
 }
 
+/*-----Pop up-----*/
 #popup {
-  background-color: #727272;
-  width: 50%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6705882353);
+  inset: 0;
+  z-index: 10;
+  display: none;
+}
+#popup__inner {
+  background-color: #ffffff;
   position: absolute;
+  width: 80%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
   padding: 40px;
   border-radius: 30px;
-  display: none;
 }
 
+/*-----Formulaire-----*/
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
