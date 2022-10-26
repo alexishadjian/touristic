@@ -262,6 +262,11 @@ html {
   width: 95%;
 }
 
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
 .padding-0 {
   padding: 0;
 }
@@ -280,7 +285,6 @@ html {
 
 .scroll {
   overflow: hidden;
-  height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -364,6 +368,17 @@ Modèles
   border-radius: 30px;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
+#popup__inner span {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+#popup__inner span:before {
+  content: "×";
+  font-size: 30px;
+  font-weight: 600;
+}
 
 /*-----Formulaire-----*/
 /*--------------------------------------------------------------
@@ -387,6 +402,23 @@ header .site-header__logo img {
 }
 header .site-header nav {
   display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.445);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  top: 94px;
+  right: 0;
+}
+header .site-header nav ul li {
+  list-style: none;
+}
+header .site-header nav ul li a {
+  display: block;
+  font-weight: 700;
+  padding: 20px 40px;
+}
+header .site-header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.704);
 }
 header .site-header #nav-btn {
   display: flex;
@@ -405,8 +437,11 @@ header .site-header #nav-btn span {
   background-color: #000000;
   transition: 0.2s;
 }
-header .site-header #nav-btn span:last-child {
-  width: 70%;
+header .site-header #nav-btn span.active:first-child {
+  transform: scaleY(0);
+}
+header .site-header #nav-btn span.active:last-child {
+  transform: scaleY(0);
 }
 
 /*--------------------------------------------------------------
@@ -431,7 +466,9 @@ Page
   transform: translate(-50%, 0);
 }
 #slider .slider-image__info a {
-  background-color: rgba(255, 255, 255, 0.547);
+  background-color: rgba(255, 255, 255, 0.445);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 30px;
   margin: 0;
   text-decoration: none;

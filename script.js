@@ -4,17 +4,11 @@ jQuery(document).ready(function($){
     Pop up
     --------------------------------------------------------------*/ 
     
-    $("#popup").addClass("active");
-
-    $('html, body').addClass("scroll");
-
-    // Hide pop up when click outside
-    $(document).mouseup(function (e) {
-        if ($(e.target).closest("#container").length === 0) {
-            $("#popup").removeClass("active");
-            $('html, body').removeClass("scroll");
-        }
-    });
+    //Show pop up
+    setTimeout(function() {
+        $("#popup").addClass("active");
+        $('html, body').addClass("scroll");
+    }, 1000);
         
     // Hide pop up when press escape
     $(document).keydown(function (e) {
@@ -22,6 +16,12 @@ jQuery(document).ready(function($){
             $("#popup").removeClass("active");
             $('html, body').removeClass("scroll");
         }
+    });
+
+    // Hide pop up when click on cross
+    $("#popup span").on('click', function() {
+        $("#popup").removeClass("active");
+        $('html, body').removeClass("scroll");
     });
 
     /*--------------------------------------------------------------
@@ -62,19 +62,9 @@ jQuery(document).ready(function($){
 Menu mobile
 --------------------------------------------------------------*/
 
-var mobyMenu = new Moby({
-	breakpoint		 : 1024,
-	enableEscape	 : true,
-    menu             : $('#main-nav'),
-	menuClass		 : 'right-side',
-	mobyTrigger		 : $("#nav-btn"),
-    onClose          : false,
-    onOpen           : false,
-	overlay			 : true,
-	overlayClass 	 : 'dark',
-    subMenuOpenIcon  : '<span>&#x25BC;</span>',
-	subMenuCloseIcon : '<span>&#x25B2;</span>',
-    template         : '<div class="moby-wrap"><div class="moby-close"><span class="moby-close-icon"></span> Close Menu</div><div class="moby-menu"></div></div>'
+$('#nav-btn').click(function() {
+    $('#main-nav').slideToggle();
+    $('#nav-btn span').toggleClass("active");
 });
 
 
