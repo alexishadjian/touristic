@@ -11,9 +11,14 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    .site-header  {
+    z-index: 2;
+    background-color: $white;
+    .site-header {
         padding: 20px 0;
+        &__logo img {
+            width: 50px;
+            height: 50px;
+        }
         nav {
             display: none;
         }
@@ -24,6 +29,7 @@ header {
             align-items: flex-end;
             height: 30px;
             width: 45px;
+            cursor: pointer;
             span {
                 display: block;
                 width: 100%;
@@ -47,36 +53,72 @@ Page
 
 #slider {
     position: relative;
-    .image {
+    .slider-image {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         position: relative;
         width: 100%;
         height: 100vh;
-        &:after {
-            content: "";
+        // &:after {
+        //     content: "";
+        //     position: absolute;
+        //     inset: 0;
+        //     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 0) 61%);
+        // }
+        &__info {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 0) 61%);
+            bottom: 100px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            a {
+                background-color: rgba(255, 255, 255, 0.547);
+                border-radius: 30px;
+                margin: 0;
+                text-decoration: none;
+                color: $black;
+                font-weight: $bold;
+                padding: 20px;
+                transition: .3s;
+                &:hover {
+                    background-color: $white;
+                }
+            }
         }
     }
     .slick-arrow {
+        all: unset;
         position: absolute;
         transform: translate(0, -50%);
         top: 50%;
         z-index: 1;
+        font-size: 0;
         &.slick-prev {
             left: 20px;
+            &:before {
+                content: '\2039';
+                font-size: 50px;
+                font-weight: $bold;
+                cursor: pointer;
+                color: $white;
+            }
         }
         &.slick-next {
             right: 20px;
+            &:before {
+                content: '\203A';
+                font-size: 50px;
+                font-weight: $bold;
+                cursor: pointer;
+                color: $white;
+            }
         }
     }
 }
 
 #map {
     height: 100vh;
+    z-index: 1;
 }
 
 /*--------------------------------------------------------------

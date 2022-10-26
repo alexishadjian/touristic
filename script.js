@@ -6,10 +6,13 @@ jQuery(document).ready(function($){
     
     $("#popup").addClass("active");
 
+    $('html, body').addClass("scroll");
+
     // Hide pop up when click outside
     $(document).mouseup(function (e) {
         if ($(e.target).closest("#container").length === 0) {
             $("#popup").removeClass("active");
+            $('html, body').removeClass("scroll");
         }
     });
         
@@ -17,6 +20,7 @@ jQuery(document).ready(function($){
     $(document).keydown(function (e) {
         if (e.keyCode == 27) {
             $("#popup").removeClass("active");
+            $('html, body').removeClass("scroll");
         }
     });
 

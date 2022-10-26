@@ -74,6 +74,11 @@ html {
     display: block !important;
 }
 
+.scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
 /*--------------------------------------------------------------
 Colonne
 --------------------------------------------------------------*/
@@ -157,6 +162,7 @@ Modèles
         transform: translate(-50%, -50%);
         padding: 40px;
         border-radius: 30px;
+        box-shadow: $shadow;
     }
 }
 
