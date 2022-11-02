@@ -7,51 +7,35 @@ jQuery(document).ready(function($){
     //Show pop up
     setTimeout(function() {
         $("#popup").addClass("active");
-        $('html, body').addClass("scroll");
-    }, 1000);
+        $('.mobile-container').addClass("scroll");
+    }, 3000);
         
     // Hide pop up when press escape
     $(document).keydown(function (e) {
         if (e.keyCode == 27) {
             $("#popup").removeClass("active");
-            $('html, body').removeClass("scroll");
+            $('.mobile-container').removeClass("scroll");
         }
     });
 
     // Hide pop up when click on cross
     $("#popup span").on('click', function() {
         $("#popup").removeClass("active");
-        $('html, body').removeClass("scroll");
+        $('.mobile-container').removeClass("scroll");
     });
 
     /*--------------------------------------------------------------
     Slider
     --------------------------------------------------------------*/ 
 
-    if ($('#slider').length > 0) {
-        $('#slider').slick({
+    if ($('#slider .slider').length > 0) {
+        $('#slider .slider').slick({
             infinite: true,
             autoplay: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplaySpeed: 2000,
-            responsive: [
-                {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-                },
-                {
-                breakpoint: 530,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: false
-                },
-                },
-            ],
+            centerMode: true,
         });
 
     }
@@ -62,9 +46,9 @@ jQuery(document).ready(function($){
 Menu mobile
 --------------------------------------------------------------*/
 
-$('#nav-btn').click(function() {
-    $('#main-nav').slideToggle();
-    $('#nav-btn span').toggleClass("active");
+$('.bottom-nav__btn').click(function() {
+    $('.burger-nav').toggleClass("active");
+    $('.bottom-nav__btn span').toggleClass("active");
 });
 
 

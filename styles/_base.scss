@@ -39,6 +39,7 @@ $dark_grey: #212121;
 $grey: #727272;
 $shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
 $mask: #00000040;
+$radius: 30px;
 
 $primary_color: $dark_grey;
 $secondary_color: $grey;
@@ -52,15 +53,59 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.mobile-container {
+    max-width: 450px;
+    width: 100%;
+    background-color: $white;
+    height: 100%;
+    max-height: 900px;
+    border-radius: 50px;
+    overflow-y: scroll;
+    position: relative;
+    box-shadow: $shadow;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 .wrapper {
-    max-width: 1375px;
     margin: 0 auto;
-    width: 95%;
+    width: 90%;
+}
+
+.h1 {
+    font-size: 60px;
+}
+
+.h2 {
+    font-size: 50px;
+}
+
+.h3 {
+    font-size: 40px;
+}
+
+.h4 {
+    font-size: 25px;
+    margin-bottom: 15px;
 }
 
 a {
     color: $black;
     text-decoration: none;
+}
+
+section {
+    margin: 50px 0;
 }
 
 .padding-0 {
@@ -73,10 +118,6 @@ a {
 
 .text-align_center {
     text-align: center;
-}
-
-.active {
-    display: block !important;
 }
 
 .scroll {
@@ -149,14 +190,21 @@ Modèles
     }
 }
 
-/*-----Pop up-----*/
+/*-----Pop-up-----*/
 
 #popup {
+    display: none;
     position: fixed;
     background-color: #000000ab;
-    inset: 0;
-    z-index: 10;
-    display: none;
+    border-radius: 50px;
+    max-width: 450px;
+    max-height: 900px;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    &.active {
+        display: block;
+    }
     &__inner {
         background-color: $white;
         position: absolute;

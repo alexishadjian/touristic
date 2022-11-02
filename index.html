@@ -6,65 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet">
     <link href="assets/slick/slick.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+    <link href="assets/leaflet/leaflet.css" rel="stylesheet">
 
     <title>Guide</title>
 </head>
 <body>
 
-    <header>
-        <div class="site-header wrapper row">
-            <div class="site-header__logo col1">
-                <a href="#"><img class="logo" src="assets/img/logo.svg"/></a>
-            </div>
-            <nav id="main-nav">
-                <ul class="padding-0 margin-0">
-                    <li><a href="#">Place</a></li>
-                    <li><a href="#">Restaurant</a></li>
-                    <li><a href="#">Hotel</a></li>
-                    <li><a href="#">Travel</a></li>
-                <ul>
-            </nav>
-            <div id="nav-btn">
-                <span></span>
-                <span></span>
+    <button>Light</button>
+
+    <div class="mobile-container">
+
+        <div id="popup">
+            <div id="popup__inner">
+                <h2 class="text-align_center">Pop up !</h2>
                 <span></span>
             </div>
         </div>
-    </header>
 
-    <main>
+        <nav class="bottom-nav">
+            <img src="assets/img/home.svg" class="bottom-nav__home"/>
+            <div class="bottom-nav__btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <img src="assets/img/map.svg" class="bottom-nav__map"/>
+        </nav>
 
-        <section id="slider">
-            <div class="slider-image" style="background-image: url('assets/img/image1.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-            <div class="slider-image" style="background-image: url('assets/img/image2.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-            <div class="slider-image" style="background-image: url('assets/img/image3.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-            <div class="slider-image" style="background-image: url('assets/img/image4.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-            <div class="slider-image" style="background-image: url('assets/img/image5.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-            <div class="slider-image" style="background-image: url('assets/img/image6.jpeg');"><div class="slider-image__info"><a href="#">En savoir plus</a></div></div>
-        </section>
+        <nav class="burger-nav row">
+            <ul class="padding-0 margin-0">
+                <li><a href="#">Place</a></li>
+                <li><a href="#">Restaurant</a></li>
+                <li><a href="#">Hotel</a></li>
+                <li><a href="#">Travel</a></li>
+            <ul>
+        </nav>
 
-        <section id="map">
+        <header class="site-header">
+            <h1 class="h1 margin-0">Explore Beauty of nature</h1>
+            <a href="#slider" class="site-header__button">Explore</a>
+        </header>
 
-        </section>
-        
-    </main>
+        <main class="wrapper">
 
-    <footer>
-        <script src="assets/jQuery/jquery-3.6.1.min.js"></script>
-        <script src="assets/slick/slick.min.js"></script>
-        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
-        <script src="script.js"></script>
-    </footer>
+            <section id="slider">
+                <h4 class="h4">Recommended</h4>
+                <div class="slider">
+                    <div class="slider__image" style="background-image: url('assets/img/image1.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                    <div class="slider__image" style="background-image: url('assets/img/image2.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                    <div class="slider__image" style="background-image: url('assets/img/image3.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                    <div class="slider__image" style="background-image: url('assets/img/image4.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                    <div class="slider__image" style="background-image: url('assets/img/image5.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                    <div class="slider__image" style="background-image: url('assets/img/image6.jpeg');">
+                        <div class="slider__image__info">
+                            Grand Canyon, Arizona
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <section class="map-container">
+                <h4 class="h4">Based on your location</h4>
+                <div id="map"></div>
+            </section>
+            
+        </main>
+
+        <footer>
+            <script src="assets/jQuery/jquery-3.6.1.min.js"></script>
+            <script src="assets/slick/slick.min.js"></script>
+            <script src="assets/leaflet/leaflet.js"></script>
+            <script src="script.js"></script>
+        </footer>
+    </div>
 
 </body>
-
-    <div id="popup">
-        <div id="popup__inner">
-            <h2 class="text-align_center">Pop up !</h2>
-            <span></span>
-        </div>
-    </div>
 
 </html>
