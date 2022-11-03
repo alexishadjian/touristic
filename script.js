@@ -1,6 +1,21 @@
 jQuery(document).ready(function($){
 
     /*--------------------------------------------------------------
+    Display bottom navigation
+    --------------------------------------------------------------*/
+
+    $(".mobile-container").on('scroll', function() {
+
+        if ($(".mobile-container").scrollTop() > 100 ) { 
+            $(".bottom-nav").addClass('active');
+    
+        } else if ($(".mobile-container").scrollTop() < 10 )  { 
+            $(".bottom-nav").removeClass('active');
+        }
+
+    });
+    
+    /*--------------------------------------------------------------
     Pop up
     --------------------------------------------------------------*/ 
     
@@ -66,6 +81,3 @@ jQuery(document).ready(function($){
     marker.bindPopup("<b>Indonésie</b><br>Des îles perdues.").openPopup();
     
 });
-
-
-

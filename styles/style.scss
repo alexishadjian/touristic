@@ -8,7 +8,7 @@ Header, Nav
 .site-header {
     background: url('../assets/img/image5.jpeg') no-repeat center;
     background-size: cover;
-    height: calc(100% - 80px);
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,29 +27,29 @@ Header, Nav
         color: $white;
         padding: 30px;
     }
-    &__button {
-        
-    }
 }
 
 /*------Navs------*/
 
 .bottom-nav {
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    background-color: $white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    margin-top: 820px;
-    max-width: 450px;
-    max-height: 80px;
-    height: 100%;
-    width: 100%;
-    padding: 20px 0;
+    opacity: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: fixed;
+    background-color: $black;
+    border-radius: $radius;
+    margin: 800px 20px 0 20px;
+    max-width: 410px;
+    max-height: 80px;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    padding: 20px 0;
+    transition: .3s;
+    &.active {
+        opacity: 1;
+    }
     &__home img {
         width: 40px;
         height: 40px;
@@ -68,7 +68,7 @@ Header, Nav
         span {
             display: block;
             position: absolute;
-            background-color: $black;
+            background-color: $white;
             transition: .25s ease-in-out;
             transform: rotate(0deg);
             border-radius: 10px;
@@ -116,10 +116,9 @@ Header, Nav
     background-color: rgba(255, 255, 255, 0.445);
     transition: filter 0.3s, opacity .4s, height 0s linear .4s;
     backdrop-filter: blur(20px);
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    border-radius: $radius_big;
     max-width: 450px;
-    max-height: 820px;
+    max-height: 900px;
     height: 0;
     width: 100%;
     opacity: 0;
@@ -139,6 +138,7 @@ Header, Nav
                 text-align: center;
                 font-weight: $bold;
                 padding: 20px 40px;
+                font-size: 25px;
                 transition: .3s;
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.704);
