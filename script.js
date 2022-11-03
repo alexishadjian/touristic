@@ -39,34 +39,33 @@ jQuery(document).ready(function($){
         });
 
     }
+
+    /*--------------------------------------------------------------
+    Menu mobile
+    --------------------------------------------------------------*/
+
+    $('.bottom-nav__btn').click(function() {
+        $('.burger-nav').toggleClass("active");
+        $('.bottom-nav__btn span').toggleClass("active");
+    });
+
+    /*--------------------------------------------------------------
+    Map
+    --------------------------------------------------------------*/ 
+
+    var map = L.map('map').setView([-4.279582929517693, 122.87303532649939], 10);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+
+    var marker = L.marker([-4.279582929517693, 122.87303532649939]).addTo(map);
+
+    marker.bindPopup("<b>Indonésie</b><br>Des îles perdues.").openPopup();
     
 });
-
-/*--------------------------------------------------------------
-Menu mobile
---------------------------------------------------------------*/
-
-$('.bottom-nav__btn').click(function() {
-    $('.burger-nav').toggleClass("active");
-    $('.bottom-nav__btn span').toggleClass("active");
-});
-
-
-/*--------------------------------------------------------------
-Map
---------------------------------------------------------------*/ 
-
-var map = L.map('map').setView([48.517526305997144, 2.6245277693024156], 13);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-
-var marker = L.marker([48.517526305997144, 2.6245277693024156]).addTo(map);
-
-marker.bindPopup("<b>MyDigitalSchool</b><br>École du digital.").openPopup();
 
 
 

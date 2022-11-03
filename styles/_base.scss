@@ -34,7 +34,7 @@ $bold: 700;
 
 $bleu: #197CB0;
 $white: #ffffff;
-$black: #000000;
+$black: #252525;
 $dark_grey: #212121;
 $grey: #727272;
 $shadow: 0px 0px 30px 0px rgb(0 0 0 / 20%);
@@ -53,13 +53,31 @@ html {
     scroll-behavior: smooth;
 }
 
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: $white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $black;
+    }
+}
+
+
 body {
-    background-color: #252525;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    gap: 50px;
     height: 100vh;
+    .switch {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
 }
 
 .mobile-container {
@@ -171,18 +189,18 @@ Modèles
 /*-----Bouton-----*/
 
 .btn {
-    background: none;
-    border-radius: 30px;
-    padding: 10px 25px;
-    display: inline-block;
+    text-transform: uppercase;
     text-decoration: none;
-    cursor: pointer;
+    border-radius: $radius;
+    font-weight: $bold;
+    padding: 15px 40px;
+    margin-top: 40px;
     transition: .2s;
-    font-weight: $semi-bold;
+    cursor: pointer;
 }
 
 .btn_primary {
-    background-color: $black;
+    background-color: royalblue;
     color: $white;
     &:hover {
         box-shadow: $shadow;
