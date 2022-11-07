@@ -270,6 +270,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   gap: 50px;
   height: 100vh;
 }
@@ -290,6 +291,12 @@ body .switch {
   position: relative;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 1500px) {
+  .mobile-container {
+    max-width: 360px;
+    max-height: 700px;
+  }
+}
 .mobile-container::-webkit-scrollbar {
   display: none;
 }
@@ -301,6 +308,11 @@ body .switch {
 
 .h1 {
   font-size: 60px;
+}
+@media (max-width: 1500px) {
+  .h1 {
+    font-size: 50px;
+  }
 }
 
 .h2 {
@@ -415,6 +427,12 @@ Modèles
   width: 100%;
   z-index: 30;
 }
+@media (max-width: 1500px) {
+  #popup {
+    max-width: 360px;
+    max-height: 700px;
+  }
+}
 #popup.active {
   display: block;
 }
@@ -486,6 +504,12 @@ Header, Nav
   z-index: 20;
   padding: 20px 0;
   transition: 0.3s;
+}
+@media (max-width: 1500px) {
+  .bottom-nav {
+    margin: 600px 20px 0 20px;
+    max-width: 320px;
+  }
 }
 .bottom-nav.active {
   opacity: 1;
@@ -563,6 +587,12 @@ Header, Nav
   z-index: 10;
   filter: blur(10px);
 }
+@media (max-width: 1500px) {
+  .burger-nav {
+    max-width: 360px;
+    max-height: 700px;
+  }
+}
 .burger-nav.active {
   transition: filter 0.3s, opacity 0.4s, height 0s linear 0s;
   filter: blur(0);
@@ -579,6 +609,11 @@ Header, Nav
   padding: 20px 40px;
   font-size: 25px;
   transition: 0.3s;
+}
+@media (max-width: 1500px) {
+  .burger-nav ul li a {
+    font-size: 20px;
+  }
 }
 .burger-nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.704);

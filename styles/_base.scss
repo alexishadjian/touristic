@@ -45,6 +45,12 @@ $radius_big: 50px;
 $primary_color: $dark_grey;
 $secondary_color: $grey;
 
+@mixin laptop {
+	@media (max-width: 1500px) {
+		@content;
+	}
+}
+
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
@@ -72,6 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     gap: 50px;
     height: 100vh;
     .switch {
@@ -91,6 +98,10 @@ body {
     overflow-y: scroll;
     position: relative;
     box-shadow: $shadow;
+    @include laptop {
+        max-width: 360px;
+        max-height: 700px;
+    }
     &::-webkit-scrollbar {
         display: none;
     }
@@ -103,6 +114,9 @@ body {
 
 .h1 {
     font-size: 60px;
+    @include laptop {
+        font-size: 50px;
+    }
 }
 
 .h2 {
@@ -221,6 +235,10 @@ Modèles
     height: 100%;
     width: 100%;
     z-index: 30;
+    @include laptop {
+        max-width: 360px;
+        max-height: 700px;
+    }
     &.active {
         display: block;
     }

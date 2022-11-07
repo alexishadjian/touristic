@@ -47,6 +47,10 @@ Header, Nav
     z-index: 20;
     padding: 20px 0;
     transition: .3s;
+    @include laptop {
+        margin: 600px 20px 0 20px;
+        max-width: 320px;
+    }
     &.active {
         opacity: 1;
     }
@@ -124,6 +128,10 @@ Header, Nav
     opacity: 0;
     z-index: 10;
     filter: blur(10px);
+    @include laptop {
+        max-width: 360px;
+        max-height: 700px;
+    }
     &.active {
         transition: filter 0.3s, opacity 0.4s, height 0s linear 0s;
         filter: blur(0);
@@ -140,6 +148,9 @@ Header, Nav
                 padding: 20px 40px;
                 font-size: 25px;
                 transition: .3s;
+                @include laptop {
+                    font-size: 20px;
+                }
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.704);
                 }
