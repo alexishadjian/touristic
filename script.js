@@ -81,3 +81,22 @@ jQuery(document).ready(function($){
     marker.bindPopup("<b>Indonésie</b><br>Des îles perdues.").openPopup();
     
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    let url = "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=03bf3f0c6d128147c1d3bcfb91919c39&units=metric";
+  
+    fetch(url)
+      .then( response => {
+          return response.json();
+        }
+      )
+      .then(data => {
+        console.log(data)
+        document.querySelector('h1').innerHTML = data.main.temp + '°C';
+  
+      })
+  
+  })
