@@ -7,12 +7,10 @@
     <link href="styles/style.css" rel="stylesheet">
     <link href="assets/slick/slick.css" rel="stylesheet">
     <link href="assets/leaflet/leaflet.css" rel="stylesheet">
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.svg">
     <title>Guide</title>
 </head>
 <body>
-
-    <button class="switch">Switch</button>
 
     <div class="mobile-container">
 
@@ -30,11 +28,11 @@
                 <span></span>
                 <span></span>
             </div>
-            <a href="" class="bottom-nav__map"><img src="assets/img/map.svg"/></a>
+            <a href="#" class="bottom-nav__map"><img src="assets/img/map.svg"/></a>
         </nav>
 
         <nav class="burger-nav row">
-            <ul class="padding-0 margin-0">
+            <ul class="padding_0 margin_0">
                 <li><a href="#">Place</a></li>
                 <li><a href="#">Restaurant</a></li>
                 <li><a href="#">Hotel</a></li>
@@ -43,62 +41,145 @@
         </nav>
 
         <header class="site-header col6">
-            <h1 class="h1 margin-0">Explore Beauty of nature</h1>
+            <h1 class="h1 margin_0 color_white">Explore Beauty of nature</h1>
             <a href="#slider" class="site-header__button btn btn_primary">Explore</a>
         </header>
 
         <main class="wrapper">
+
+            <!-----------------------Slider--------------------------->
 
             <section id="slider">
                 <h4 class="h4">Recommended</h4>
                 <div class="slider">
                     <div class="slider__image" style="background-image: url('assets/img/image1.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                     <div class="slider__image" style="background-image: url('assets/img/image2.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                     <div class="slider__image" style="background-image: url('assets/img/image3.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                     <div class="slider__image" style="background-image: url('assets/img/image4.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                     <div class="slider__image" style="background-image: url('assets/img/image5.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                     <div class="slider__image" style="background-image: url('assets/img/image6.jpeg');">
                         <div class="slider__image__info">
-                            Grand Canyon, Arizona
+                            Îles Fidji, Océanie
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="map-container">
+            <!-----------------------Map--------------------------->
+
+            <section id="map">
                 <h4 class="h4">Based on your location</h4>
-                <div id="map"></div>
+                <div id="leaflet-map"></div>
             </section>
+
+            <!-----------------------Météo--------------------------->
             
+            <section id="weather">
+                <h4 class="h4">Weather</h4>
+                <div class="weather">
+                    <div class="weather__current">
+                        <div class="left col3">
+                            <span class=""></span>
+                            <p class="desc"></p>
+                            <p class="day">Today</p>
+                        </div>
+                        <div class="right col3">
+                            <p class="temp"></p>
+                            <p class="place">Paris, France</p>
+                        </div>
+                        
+                    </div>
+                    <div class="weather__forecast">
+                        <div class="weather__forecast__single first">
+                            <p class="day"></p>
+                            <div>
+                                <span class=""></span>
+                                <p class="temp"></p>
+                            </div>
+                        </div>
+                        <div class="weather__forecast__single second">
+                            <p class="day"></p>
+                            <div>
+                                <span class=""></span>
+                                <p class="temp"></p>
+                            </div>
+                        </div>
+                        <div class="weather__forecast__single third">
+                            <p class="day"></p>
+                            <div>
+                                <span class=""></span>
+                                <p class="temp"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-----------------------Contact--------------------------->
+
+            <section id="contact">
+                <h4 class="h4">Contact</h4>
+                <form action="">
+                    <div class="input-group mid">
+                        <input required="" type="text" name="text" autocomplete="off">
+                        <label>First name</label>
+                    </div>
+                    <div class="input-group mid">
+                        <input required="" type="text" name="text" autocomplete="off">
+                        <label>Last name</label>
+                    </div>
+                    <div class="input-group">
+                        <input required="" type="text" name="text" autocomplete="off">
+                        <label>Mail</label>
+                    </div>
+                    <div class="input-group">
+                        <input required="" type="text" name="text" autocomplete="off">
+                        <label>Phone</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea required="" type="text" name="text" autocomplete="off" rows="6"></textarea>
+                        <label>Message</label>
+                    </div>
+
+                    <input class="btn btn_primary" type="submit" value="Envoyer">
+
+                </form>
+
+                    
+
+            </section>
+
         </main>
 
         <footer>
-            <script src="assets/jQuery/jquery-3.6.1.min.js"></script>
-            <script src="assets/slick/slick.min.js"></script>
-            <script src="assets/leaflet/leaflet.js"></script>
-            <script src="script.js"></script>
+
         </footer>
     </div>
+
+    <script src="assets/jQuery/jquery-3.6.1.min.js"></script>
+    <script src="assets/slick/slick.min.js"></script>
+    <script src="assets/leaflet/leaflet.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
