@@ -254,6 +254,7 @@ html {
   --white: #FFFFFF;
   --dark_grey: #252525;
   --grey: #727272;
+  --light_blue: #b7ddff;
   --font: "Montserrat", sans-serif;
   --regular: 400;
   --semibold: 600;
@@ -311,6 +312,7 @@ body .switch {
   overflow-y: scroll;
   position: relative;
   box-shadow: var(--shadow);
+  z-index: 1;
 }
 @media (max-width: 1500px) {
   .mobile-container {
@@ -342,12 +344,42 @@ body .switch {
 
 .h3 {
   font-size: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  height: 14px;
+  background-color: var(--light_blue);
+  border-radius: var(--radius);
+  z-index: -1;
 }
 
 .h4 {
-  font-size: 25px;
+  font-size: 28px;
   margin-top: 80px;
   margin-bottom: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.h4:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  background-color: var(--light_blue);
+  border-radius: var(--radius);
+  z-index: -1;
 }
 
 a {
@@ -458,6 +490,18 @@ Modèles
     max-height: 700px;
   }
 }
+#popup span {
+  position: absolute;
+  cursor: pointer;
+  right: 25px;
+  top: 25px;
+}
+#popup span:before {
+  content: "×";
+  font-size: 70px;
+  line-height: 45px;
+  color: var(--white);
+}
 #popup.active {
   display: block;
 }
@@ -472,16 +516,8 @@ Modèles
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-#popup__inner span {
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-}
-#popup__inner span:before {
-  content: "×";
-  font-size: 30px;
-  font-weight: var(--semibold);
+#popup__inner h3 {
+  margin: 0 auto 30px auto;
 }
 
 /*-----Formulaire-----*/
@@ -529,6 +565,7 @@ form .input-group label {
   left: 15px;
 }
 form input[type=submit] {
+  margin-top: 10px;
   width: 100%;
   border: 0;
   outline: 0;
@@ -896,5 +933,37 @@ Page
 Footer
 --------------------------------------------------------------*/
 footer {
-  padding: 50px;
+  background-color: var(--grey);
+  color: var(--white);
+  margin-top: 80px;
+  padding: 40px;
+}
+footer .footer {
+  margin-bottom: 100px;
+}
+footer .footer__nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+footer .footer__nav ul li {
+  list-style: none;
+}
+footer .footer__nav ul li a {
+  color: var(--white);
+}
+footer .footer__copyright {
+  text-align: center;
+}
+footer .footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+footer .footer__socials a svg {
+  width: 30px;
+  height: 30px;
+  color: var(--white);
 }

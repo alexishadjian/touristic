@@ -33,6 +33,7 @@ html {
     --white: #FFFFFF;
     --dark_grey: #252525;
     --grey: #727272;
+    --light_blue: #b7ddff;
 
     --font: 'Montserrat', sans-serif;
     --regular: 400;
@@ -104,6 +105,7 @@ body {
     overflow-y: scroll;
     position: relative;
     box-shadow: var(--shadow);
+    z-index: 1;
     @include laptop {
         max-width: 360px;
         max-height: 700px;
@@ -131,12 +133,38 @@ body {
 
 .h3 {
     font-size: 40px;
+    width: fit-content;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px;
+        height: 14px;
+        background-color: var(--light_blue);
+        border-radius: var(--radius);
+        z-index: -1;
+    }
 }
 
 .h4 {
-    font-size: 25px;
+    font-size: 28px;
     margin-top: 80px;
     margin-bottom: 30px;
+    width: fit-content;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 14px;
+        background-color: var(--light_blue);
+        border-radius: var(--radius);
+        z-index: -1;
+    }
 }
 
 a {
@@ -249,6 +277,18 @@ Modèles
         max-width: 360px;
         max-height: 700px;
     }
+    span {
+        position: absolute;
+        cursor: pointer;
+        right: 25px;
+        top: 25px;
+        &:before {
+            content: '\00D7';
+            font-size: 70px;
+            line-height: 45px;
+            color: var(--white);
+        }
+    }
     &.active {
         display: block;
     }
@@ -262,16 +302,8 @@ Modèles
         padding: 40px;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        span {
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            &:before {
-                content: '\00D7';
-                font-size: 30px;
-                font-weight: var(--semibold);
-            }
+        h3 {
+            margin: 0 auto 30px auto;
         }
     }
 }
@@ -322,6 +354,7 @@ form {
         }
     }
     input[type="submit"] {
+        margin-top: 10px;
         width: 100%;
         border: 0;
         outline: 0;

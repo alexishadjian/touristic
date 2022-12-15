@@ -375,5 +375,39 @@ Footer
 --------------------------------------------------------------*/
 
 footer {
-    padding: 50px;
+    background-color: var(--grey);
+    color: var(--white);
+    margin-top: 80px;
+    padding: 40px;
+    .footer {
+        margin-bottom: 100px;
+        &__nav {
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                li {
+                    list-style: none;
+                    a {
+                        color: var(--white);
+                    }
+                }
+            }
+        }
+        &__copyright {
+            text-align: center;
+        }
+        &__socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            a svg {
+                width: 30px;
+                height: 30px;
+                color: var(--white);
+            }
+        }
+    }
 }

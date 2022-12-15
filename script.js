@@ -114,21 +114,63 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.weather .weather__forecast__single.first span ').classList.add(data.days[1].icon);
         document.querySelector('.weather .weather__forecast__single.second span ').classList.add(data.days[2].icon);
         document.querySelector('.weather .weather__forecast__single.third span ').classList.add(data.days[3].icon);
-    })
-
-    let daysNumber = new Date().getDay();
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-    days.forEach( ( day,index ) => {
-        // Check if the index of day value is equal to the returned value of getDay()
-        if ( index == daysNumber + 1 ) {
-            document.querySelector('.weather .weather__forecast__single.first .day').innerHTML = day;
-        } else if ( index == daysNumber + 2 ) {
-            document.querySelector('.weather .weather__forecast__single.second .day').innerHTML = day;
-        } else if ( index == daysNumber + 3 ) {
-            document.querySelector('.weather .weather__forecast__single.third .day').innerHTML = day;
-        }
-
     });
+
+
+    let day = new Date().getDay();
+
+    let tomorrow = '';
+    let aftertomorrow = '';
+    let afteraftertomorrow = '';
+
+    switch  (day) {
+        case 0:
+            day = "Sunday";
+            tomorrow = "Monday";
+            aftertomorrow = "Thuesday";
+            afteraftertomorrow = "Wednesday";
+            break;
+        case 1:
+            day = "Monday";
+            tomorrow = "Thuesday";
+            aftertomorrow = "Wednesday";
+            afteraftertomorrow = "Thursday";
+            break;
+        case 2:
+            day = "Thuesday";
+            tomorrow = "Wednesday";
+            aftertomorrow = "Thursday";
+            afteraftertomorrow = "Friday";
+            break;
+        case 3:
+            day = "Wednesday";
+            tomorrow = "Thursday";
+            aftertomorrow = "Friday";
+            afteraftertomorrow = "Saturday";
+            break;
+        case 4:
+            day = "Thursday";
+            tomorrow = "Friday";
+            aftertomorrow = "Saturday";
+            afteraftertomorrow = "Sunday";
+            break;
+        case 5:
+            day = "Friday";
+            tomorrow = "Saturday";
+            aftertomorrow = "Sunday";
+            afteraftertomorrow = "Monday";
+            break;
+        case 6:
+            day = "Saturday";
+            tomorrow = "Sunday";
+            aftertomorrow = "Monday";
+            afteraftertomorrow = "Thuesday";
+            break;
+    }
+
+    document.querySelector('.weather .weather__forecast__single.first .day').innerHTML = tomorrow;
+    document.querySelector('.weather .weather__forecast__single.second .day').innerHTML = aftertomorrow;
+    document.querySelector('.weather .weather__forecast__single.third .day').innerHTML = afteraftertomorrow;
+
 
 })
