@@ -250,16 +250,16 @@ Modèles
     padding: 15px 40px;
     transition: .2s;
     cursor: pointer;
-}
-
-.btn_primary {
-    background-color: var(--global_color);
-    color: var(--white);
-    &:hover {
-        box-shadow: var(--shadow);
-        transform: translate(0, -2px);
+    &_primary {
+        background-color: var(--global_color);
+        color: var(--white);
+        &:hover {
+            box-shadow: var(--shadow);
+            transform: translate(0, -2px);
+        }
     }
 }
+
 
 /*-----Pop-up-----*/
 

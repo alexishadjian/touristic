@@ -38,6 +38,7 @@ Header, Nav
     position: fixed;
     background-color: var(--dark_grey);
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
     margin: 800px 20px 0 20px;
     max-width: 410px;
     max-height: 80px;
@@ -375,7 +376,7 @@ Footer
 --------------------------------------------------------------*/
 
 footer {
-    background-color: var(--grey);
+    background-color: var(--dark_grey);
     color: var(--white);
     margin-top: 80px;
     padding: 40px;

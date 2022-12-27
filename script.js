@@ -78,6 +78,34 @@ jQuery(document).ready(function($){
     var marker = L.marker([-16.689399012363168, 179.21954740180354]).addTo(map);
 
     marker.bindPopup("<b>Îles Fidji, Océanie</b><br>Des îles perdues").openPopup();
+
+    var circle = L.circle([-16.705446272887762, 179.3042419660778], {
+        color: 'blue',
+        fillColor: '#4169e1',
+        fillOpacity: 0.4,
+        radius: 1500
+    }).addTo(map);
+
+    var circle2 = L.circle([-16.692635835436633, 179.179756462032], {
+        color: 'blue',
+        fillColor: '#4169e1',
+        fillOpacity: 0.4,
+        radius: 1500
+    }).addTo(map);
+
+    var circle3 = L.circle([-16.785998765660732, 179.32399815449182], {
+        color: 'blue',
+        fillColor: '#4169e1',
+        fillOpacity: 0.4,
+        radius: 1500
+    }).addTo(map);
+
+    var circle4 = L.circle([-16.791326254853992, 179.09121412362742], {
+        color: 'blue',
+        fillColor: '#4169e1',
+        fillOpacity: 0.4,
+        radius: 1500
+    }).addTo(map);
     
 });
 
