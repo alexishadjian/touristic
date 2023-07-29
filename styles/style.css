@@ -344,7 +344,6 @@ body .switch {
 
 .h3 {
   font-size: 40px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -365,7 +364,6 @@ body .switch {
   font-size: 28px;
   margin-top: 80px;
   margin-bottom: 30px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -739,7 +737,6 @@ Page
   position: relative;
 }
 #slider .slider {
-  cursor: -webkit-grab;
   cursor: grab;
 }
 #slider .slider .slick-list {
